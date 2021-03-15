@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Source+Code+Pro&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #e4e4e4;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Code Pro', monospace;
+
+}
+
+body {
+  background-color: #222222;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: #00ff00;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  cursor: pointer;
+  color: #00ff00;
+  margin-top: .65rem;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: 'Source Code Pro', monospace;
+  display: inline-block;
+  margin: .4rem;
+  color: inherit;
+}
+
+.cursor {
+  display: inline-block;
+  width: .7rem;
+  height: 1.17rem;
+  background: #00FF00;
+  margin-top: .6rem;
+  border-radius: 1px;
+  vertical-align: text-bottom;
+  animation: cursor 1s infinite;
+}
+@keyframes cursor {
+	0% { opacity: 1; }
+	12% { opacity: 0.75; }
+	24% { opacity: 0.5; }
+	36% { opacity: 0.25; }
+	48% { opacity: 0; }
+	60% { opacity: 0.25; }
+	72% { opacity: 0.5; }
+	84% { opacity: 0.75; }
+	100% { opacity: 1; }
+}
+
+h2.post-year {
+  margin-bottom: 2rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.post {
+  margin-top: 1.25rem;
+  padding-bottom: 1rem ;
+  border-bottom: dashed .1rem grey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-name, .post-day {
+  font-size: 1.1rem;
+}
+
+.post-name:hover {
+  color: #00ff00;
+}
+
+@media only screen and (min-width: 600px) {
+  .post-name, .post-day {
+    font-size: 1.25rem;
+  }
+}
