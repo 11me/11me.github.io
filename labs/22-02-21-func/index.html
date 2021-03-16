@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="../../style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/atom-one-dark.min.css">
+  <title>Single</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <h3 class="title"> >cd /home/lime/labs</h3><span class="cursor"></span>
+    </header>
+
+    <section class="main">
+
+      <h2>Рекурсивные функции</h2>
+
+      <div class="lab-name">
+        <p>Допишите определение функции pwr от a и b, которая определяется через себя и mpy и выдаёт a ** b для
+          положительных целых чисел.</p>
+        <p>Открыв консоль браузера, можно вызвать функцию pwr.</p>
+      </div>
+
+      <div>
+        <pre>
+          <code class="js">
+const sec = a => a + 1;
+const add = (a, b) => (b === 0) ? a : sec(add(a, b - 1));
+const mpy = (a, b) => (b === 1) ? a : add(a, mpy(a, b - 1));
+const pwr = (a, b) => (b === 0) ? 1 : (b === 1) ? a : mpy(a, pwr(a, b - 1));
+console.log(pwr(2, 13)); //MAX VAL IS 13
+console.log(pwr(2, 14)); //Maximum call stack size exceeded
+          </code>
+        </pre>
+      </div>
+
+    </section>
+
+  </div>
+  <script src="../../labs/22-02-21-func/func007.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  <!-- and it's easy to individually load additional languages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/go.min.js"></script>
+  <script charset="utf-8">
+    hljs.highlightAll();
+  </script>
+</body>
+
+</html>
