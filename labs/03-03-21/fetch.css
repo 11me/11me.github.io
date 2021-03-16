@@ -1,0 +1,63 @@
+  .rotate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+  }
+
+  @-webkit-keyframes spin2 {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: scale(1) rotate(0deg);
+    }
+
+    to {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+
+  ul, ol {
+    list-style: none;
+    margin: 1rem 0;
+  }
+
+  .lab-div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.2rem;
+  }
+
+  .list-items {
+
+  }
+
+  .btn {
+    margin: 1rem 0;
+    padding: .5rem 0;
+    width: 5.2rem;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+
+    background-color: aquamarine;
+    color: black;
+
+  }
+
+  .btn span {
+    display: none;
+  }

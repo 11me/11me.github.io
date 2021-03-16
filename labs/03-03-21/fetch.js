@@ -1,20 +1,24 @@
 const values = document.querySelector('#values').children,
-  URLs = document.querySelector('#urls').children;
+  URLs = document.querySelector('#urls').children,
+  spanRes = document.querySelector('#result'),
+  loader = document.querySelector('#loader');
 
 const headers = {
   'Content-Type': 'application/json'
 }
 
+
 const responses = [];
 let isFirstRequest = true;
 
 document
-  .querySelector('button')
+  .querySelector('.btn')
   .addEventListener('click',
 
     async ({target: t}) => {
+      spanRes.textContent = '';
       t.disabled = true;
-      t.classList.toggle('rotate');
+      loader.style.display = 'inline-block';
       let url;
 
       for (let i = 0; i < URLs.length; i++) {
@@ -29,7 +33,8 @@ document
         isFirstRequest = false;
 
       }
-      t.textContent = `Результат: ${responses.toString()}`;
-      t.classList.toggle('rotate');
+      spanRes.textContent = `Результат: ${responses.toString()}`;
+      t.disabled = false;
+      loader.style.display = 'none';
     }
   );

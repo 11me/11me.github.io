@@ -4,50 +4,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="../../style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="fetch.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/atom-one-dark.min.css">
   <title>Fetch</title>
 </head>
 
-<style type="text/css" media="screen">
-  .rotate {
-    -animation: spin .7s infinite linear;
-    -webkit-animation: spin2 .7s infinite linear;
-  }
-
-  @-webkit-keyframes spin2 {
-    from {
-      -webkit-transform: rotate(0deg);
-    }
-
-    to {
-      -webkit-transform: rotate(360deg);
-    }
-  }
-
-  @keyframes spin {
-    from {
-      transform: scale(1) rotate(0deg);
-    }
-
-    to {
-      transform: scale(1) rotate(360deg);
-    }
-  }
-</style>
-
 <body>
-  <button>Поехали</button>
-  <ol id="values">
-    <li>10</li>
-    <li>20</li>
-    <li>30</li>
-  </ol>
-  <ol id="urls">
-    <li>https://kodaktor.ru/api/m/</li>
-    <li>https://kodaktor.ru/api/MS2/</li>
-    <li>https://kodaktor.ru/api/MS3/</li>
-  </ol>
 
+  <div class="wrapper">
+
+    <header class="header">
+      <h3 class="title"> >cd /home/lime/labs</h3><span class="cursor"></span>
+    </header>
+
+    <section class="main">
+
+      <h2>Fetch</h2>
+
+      <div class="lab-name">
+        <p>Дан массив values из N значений, например N=3
+          и даны сервисы, адреса которых находятся в массиве URLs
+
+          обращаемся к сервису 1, передавая ему значение 1 получаем от него ответ 1
+          обращаемся к сервису 2, передавая ему значение 2 и ответ 1 (два аргумента) получаем от него ответ 2
+          обращаемся к сервису 3, передавая ему значение 3 и ответ 2 (два аргумента) получаем от него ответ 3
+
+          Используйте цикл, в теле которого слово await и слово fetch встречаются по 1 разу
+
+          Значения сервисам передаются в составе URL, через слэши.</p>
+      </div>
+
+      <div class="lab-div">
+        <p>Values</p>
+        <ol id="values" class="list-items">
+          <li>10</li>
+          <li>20</li>
+          <li>30</li>
+        </ol>
+        <p>Urls</p>
+        <ol id="urls" class="list-items">
+          <li>https://kodaktor.ru/api/m/</li>
+          <li>https://kodaktor.ru/api/MS2/</li>
+          <li>https://kodaktor.ru/api/MS3/</li>
+        </ol>
+        <button class="btn">Поехали <span id="loader" class="rotate">/</span></button>
+        <div>
+          <span id="result"></span>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script src="fetch.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  <!-- and it's easy to individually load additional languages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/go.min.js"></script>
+  <script charset="utf-8">
+    hljs.highlightAll();
+  </script>
 </body>
-<script src="fetch.js" charset="utf-8"></script>
 
 </html>
