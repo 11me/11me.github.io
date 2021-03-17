@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="../../style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/atom-one-dark.min.css">
+  <title>Prototype chain</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <h3 class="title"> >cd /home/lime/labs</h3><span class="cursor"></span>
+    </header>
+
+    <section class="main">
+
+      <h2>Цепочка прототипов</h2>
+
+      <div class="lab-name">
+        <p>Импортируйте (с помощью директивы require или import) объект o3 под именем obj из модуля, код которого
+          находится по адресу: https://kodaktor.ru/j/protochain или https://kodaktor.ru/j/protochain2.</p>
+        <p>Определите цепочку прототипов этого объекта и экспортируйте результат в качестве массива имён этих прототипа.
+        </p>
+        <p><b>Результат можно посмотреть в консоли браузера.</b></p>
+      </div>
+
+      <div>
+        <pre>
+          <code class="js">
+import o3 from './goss_proto.js';
+
+function getProtos(obj, arr = []) {
+
+  if (obj !== null) {
+    arr.push(obj.name);
+    getProtos(Object.getPrototypeOf(obj), arr);
+  }
+  return arr;
+
+}
+
+const names = getProtos(Object.getPrototypeOf(o3));
+// [ 'JavaScript', 'LiveScript', 'Mocha' ]
+          </code>
+        </pre>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/go.min.js"></script>
+  <script charset="utf-8">
+    hljs.highlightAll();
+  </script>
+  <script src="goss_proto.js" type="module" charset="utf-8"></script>
+  <script src="proto_chain.js" type="module" charset="utf-8"></script>
+
+</body>
+
+</html>
