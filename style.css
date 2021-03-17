@@ -36,6 +36,10 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
+.header > a {
+  color: #00ff00;
+}
+
 .title {
   font-family: 'Source Code Pro', monospace;
   display: inline-block;
