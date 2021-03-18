@@ -10,6 +10,6 @@ function getProtos(obj, arr = []) {
 
 }
 
-const names = getProtos(Object.getPrototypeOf(o3)); // [ 'JavaScript', 'LiveScript', 'Mocha' ]
+const names = getProtos(o3); // [ 'JavaScript', 'LiveScript', 'Mocha' ]
 o3.name; //ECMAScript
 console.log(names);
