@@ -1,0 +1,22 @@
+baseURL = 'https://11me.github.io/'
+languageCode = 'en'
+title = 'Personal Website On the Internet'
+theme = 'awesome'
+sectionPagesMenu = 'main'
+
+[params]
+toc = true
+
+[params.author]
+avatar = "me.png"
+intro = "Welcome to my personal website"
+name = "Emil"
+description = "Documenting my learning path, sharing professional insights, exploring topics that inspire and challenge me."
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/11me"
+
+[[params.socialIcons]]
+name = "RSS"
+url = "/index.xml"

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Limerc Personal Website</title>
+    <link>http://localhost:1313/ru/posts/</link>
+    <description>Recent content in Posts on Limerc Personal Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Sat, 02 Aug 2025 00:18:30 +0300</lastBuildDate><atom:link href="http://localhost:1313/ru/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Containers Work</title>
+      <link>http://localhost:1313/ru/posts/how-containers-work/</link>
+      <pubDate>Sat, 02 Aug 2025 00:18:30 +0300</pubDate>
+      
+      <guid>http://localhost:1313/ru/posts/how-containers-work/</guid>
+      
+      <description>&lt;h1 id=&#34;how-do-containers-work&#34;&gt;How Do Containers Work?&lt;/h1&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;To understand how docker makes its magic, first one have to understand some of
+the features of the &lt;strong&gt;Linux&lt;/strong&gt; kernel. These features called &lt;strong&gt;namespaces&lt;/strong&gt; and
+&lt;strong&gt;cgroups&lt;/strong&gt;. These features allow each process to have its own system view and run in
+isolation from other processes.&lt;/p&gt;
+&lt;p&gt;You can get a list of available namespaces by running the following command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ls /proc/$$/ns
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cgroup ipc mnt net pid pid_for_children time time_for_children user uts
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can imagine namespaces as a boxes for processes, so each process contained
+within a set of boxes and if the process goes crazy and deletes the whole
+filesystem it will not affect other processes. &lt;strong&gt;Namespaces&lt;/strong&gt; and &lt;strong&gt;cgroups&lt;/strong&gt;
+deserve their own topic and I am not going to go deep into details.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
