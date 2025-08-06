@@ -1,0 +1,17 @@
+# Hugo build files (GitHub Actions will handle building)
+public/
+
+# Hugo cache
+resources/_gen/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Hugo build lock
+.hugo_build.lock
