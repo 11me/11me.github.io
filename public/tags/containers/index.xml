@@ -1,29 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Containers on Personal Website On the Internet</title>
-    <link>http://localhost:1313/tags/containers/</link>
-    <description>Recent content in Containers on Personal Website On the Internet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 02 Aug 2025 00:18:30 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/containers/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How Do Containers Work</title>
-      <link>http://localhost:1313/posts/how-containers-work/</link>
-      <pubDate>Sat, 02 Aug 2025 00:18:30 +0300</pubDate>
-      
-      <guid>http://localhost:1313/posts/how-containers-work/</guid>
-      
-      <description>&lt;h1 id=&#34;how-do-containers-work&#34;&gt;How Do Containers Work?&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;If you&amp;rsquo;ve used Docker or Podman before, you&amp;rsquo;re likely familiar with the concept
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Containers on Personal Website On the Internet</title><link>https://11me.github.io/tags/containers/</link><description>Recent content in Containers on Personal Website On the Internet</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 02 Aug 2025 00:18:30 +0300</lastBuildDate><atom:link href="https://11me.github.io/tags/containers/index.xml" rel="self" type="application/rss+xml"/><item><title>How Do Containers Work</title><link>https://11me.github.io/posts/how-containers-work/</link><pubDate>Sat, 02 Aug 2025 00:18:30 +0300</pubDate><guid>https://11me.github.io/posts/how-containers-work/</guid><description>&lt;h1 id="how-do-containers-work">How Do Containers Work?&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>If you&amp;rsquo;ve used Docker or Podman before, you&amp;rsquo;re likely familiar with the concept
 of containers. But what exactly is a container? What is it made of? How does it
 work? And how does it differ from virtual machines? Even if you think you know
-all the answers, you might still learn something new here.&lt;/p&gt;
-&lt;h2 id=&#34;what-is-a-container&#34;&gt;What is a Container?&lt;/h2&gt;
-&lt;p&gt;When you run a command like this in your terminal:&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+all the answers, you might still learn something new here.&lt;/p>
+&lt;h2 id="what-is-a-container">What is a Container?&lt;/h2>
+&lt;p>When you run a command like this in your terminal:&lt;/p></description></item></channel></rss>

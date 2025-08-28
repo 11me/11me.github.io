@@ -1,399 +1,109 @@
-<!DOCTYPE html>
-<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="content-type" content="text/html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title itemprop="name">How Do Containers Work | Personal Website On the Internet</title>
-<meta property="og:title" content="How Do Containers Work | Personal Website On the Internet" />
-<meta name="twitter:title" content="How Do Containers Work | Personal Website On the Internet" />
-<meta itemprop="name" content="How Do Containers Work | Personal Website On the Internet" />
-<meta name="application-name" content="How Do Containers Work | Personal Website On the Internet" />
-<meta property="og:site_name" content="" />
-
-<meta name="description" content="">
-<meta itemprop="description" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:description" content="" />
-
-<meta property="og:locale" content="en" />
-<meta name="language" content="en" />
-
-  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/how-containers-work/" title="" />
-
-
-
-
-
-    
-    
-    
-
-    <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2025-08-02T00:18:30&#43;0300 />
-    <meta property="article:published_time" content=2025-08-02T00:18:30&#43;0300 />
-    <meta property="og:url" content="http://localhost:1313/posts/how-containers-work/" />
-
-    
-    <meta property="og:article:author" content="Emil" />
-    <meta property="article:author" content="Emil" />
-    <meta name="author" content="Emil" />
-    
-    
-
-    
-
-    <script defer type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "headline": "How Do Containers Work",
-        "author": {
-        "@type": "Person",
-        "name": ""
-        },
-        "datePublished": "2025-08-02",
-        "description": "",
-        "wordCount":  1249 ,
-        "mainEntityOfPage": "True",
-        "dateModified": "2025-08-02",
-        "image": {
-        "@type": "imageObject",
-        "url": ""
-        },
-        "publisher": {
-        "@type": "Organization",
-        "name": "Personal Website On the Internet"
-        }
-    }
-    </script>
-
-
-<meta name="generator" content="Hugo 0.148.2">
-
-    
-    <meta property="og:url" content="http://localhost:1313/posts/how-containers-work/">
-  <meta property="og:site_name" content="Personal Website On the Internet">
-  <meta property="og:title" content="How Do Containers Work">
-  <meta property="og:description" content="How Do Containers Work? Introduction If you’ve used Docker or Podman before, you’re likely familiar with the concept of containers. But what exactly is a container? What is it made of? How does it work? And how does it differ from virtual machines? Even if you think you know all the answers, you might still learn something new here.
-What is a Container? When you run a command like this in your terminal:">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-08-02T00:18:30+03:00">
-    <meta property="article:modified_time" content="2025-08-02T00:18:30+03:00">
-    <meta property="article:tag" content="Linux">
-    <meta property="article:tag" content="Containers">
-
-
-    
-    
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="How Do Containers Work">
-  <meta name="twitter:description" content="How Do Containers Work? Introduction If you’ve used Docker or Podman before, you’re likely familiar with the concept of containers. But what exactly is a container? What is it made of? How does it work? And how does it differ from virtual machines? Even if you think you know all the answers, you might still learn something new here.
-What is a Container? When you run a command like this in your terminal:">
-
-
-    
-
-    <link rel="canonical" href="http://localhost:1313/posts/how-containers-work/">
-    <link href="/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css" rel="stylesheet">
-    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
-
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
-    <link rel="shortcut icon" href="/favicon.ico">
-
-
-
-
-<link rel="manifest" href="http://localhost:1313/site.webmanifest">
-
-<meta name="msapplication-config" content="/browserconfig.xml">
-<meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="theme-color" content="#434648">
-
-    
-    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
-
-    
-    
-</head>
-<body data-theme = "" class="notransition">
-
-<script src="/js/theme.js"></script>
-
-<div class="navbar" role="navigation">
-    <nav class="menu" aria-label="Main Navigation">
-        <a href="http://localhost:1313/" class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
-viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-stroke-linejoin="round" class="feather feather-home">
-<title></title>
-<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-<polyline points="9 22 9 12 15 12 15 22"></polyline>
-</svg>
-        </a>
-        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-        <label for="menu-trigger">
-            <span class="menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
-            </span>
-        </label>
-
-        <div class="trigger">
-            <ul class="trigger-container">
-                
-                
-                <li>
-                    <a class="menu-link active" href="/posts/">
-                        Posts
-                    </a>
-                    
-                </li>
-                
-                <li class="menu-separator">
-                    <span>|</span>
-                </li>
-                
-                
-            </ul>
-            <a id="mode" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-            </a>
-        </div>
-    </nav>
-</div>
-
-<div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-        <article>
-            <header class="header">
-                <h1 class="header-title">How Do Containers Work</h1>
-                
-                
-                
-                <div class="post-meta">
-                    <time datetime="2025-08-02T00:18:30&#43;03:00" itemprop="datePublished"> Aug 2, 2025 </time>
-                </div>
-                
-            </header>
-            
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b></b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#what-is-a-container">What is a Container?</a></li>
-    <li><a href="#linux-namespaces">Linux Namespaces</a></li>
-    <li><a href="#isolating-a-process">Isolating a Process</a></li>
-    <li><a href="#changing-the-root-chroot">Changing the Root (chroot)</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
-    </details>
-            <div class="page-content">
-                <h1 id="how-do-containers-work">How Do Containers Work?</h1>
-<h2 id="introduction">Introduction</h2>
-<p>If you&rsquo;ve used Docker or Podman before, you&rsquo;re likely familiar with the concept
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>How Do Containers Work | Personal Website On the Internet</title><meta property="og:title" content="How Do Containers Work | Personal Website On the Internet"><meta name=twitter:title content="How Do Containers Work | Personal Website On the Internet"><meta itemprop=name content="How Do Containers Work | Personal Website On the Internet"><meta name=application-name content="How Do Containers Work | Personal Website On the Internet"><meta property="og:site_name" content><meta name=description content><meta itemprop=description content><meta property="og:description" content><meta name=twitter:description content><meta property="og:locale" content="en"><meta name=language content="en"><link rel=alternate hreflang=en href=https://11me.github.io/posts/how-containers-work/ title><meta property="og:type" content="article"><meta property="og:article:published_time" content=2025-08-02T00:18:30+0300><meta property="article:published_time" content=2025-08-02T00:18:30+0300><meta property="og:url" content="https://11me.github.io/posts/how-containers-work/"><meta property="og:article:author" content="Emil"><meta property="article:author" content="Emil"><meta name=author content="Emil"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"How Do Containers Work","author":{"@type":"Person","name":""},"datePublished":"2025-08-02","description":"","wordCount":1249,"mainEntityOfPage":"True","dateModified":"2025-08-02","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"Personal Website On the Internet"}}</script><meta name=generator content="Hugo 0.148.2"><meta property="og:url" content="https://11me.github.io/posts/how-containers-work/"><meta property="og:site_name" content="Personal Website On the Internet"><meta property="og:title" content="How Do Containers Work"><meta property="og:description" content="How Do Containers Work? Introduction If you’ve used Docker or Podman before, you’re likely familiar with the concept of containers. But what exactly is a container? What is it made of? How does it work? And how does it differ from virtual machines? Even if you think you know all the answers, you might still learn something new here.
+What is a Container? When you run a command like this in your terminal:"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-08-02T00:18:30+03:00"><meta property="article:modified_time" content="2025-08-02T00:18:30+03:00"><meta property="article:tag" content="Linux"><meta property="article:tag" content="Containers"><meta name=twitter:card content="summary"><meta name=twitter:title content="How Do Containers Work"><meta name=twitter:description content="How Do Containers Work? Introduction If you’ve used Docker or Podman before, you’re likely familiar with the concept of containers. But what exactly is a container? What is it made of? How does it work? And how does it differ from virtual machines? Even if you think you know all the answers, you might still learn something new here.
+What is a Container? When you run a command like this in your terminal:"><link rel=canonical href=https://11me.github.io/posts/how-containers-work/><link href=/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://11me.github.io/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg></head><body data-theme class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://11me.github.io/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title/><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</a><input type=checkbox id=menu-trigger class=menu-trigger>
+<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class="menu-link active" href=/posts/>Posts</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+<svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>How Do Containers Work</h1><div class=post-meta><time datetime=2025-08-02T00:18:30+03:00 itemprop=datePublished>Aug 2, 2025</time></div></header><details class=toc zgotmplz><summary><b></b></summary><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#what-is-a-container>What is a Container?</a></li><li><a href=#linux-namespaces>Linux Namespaces</a></li><li><a href=#isolating-a-process>Isolating a Process</a></li><li><a href=#changing-the-root-chroot>Changing the Root (chroot)</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></details><div class=page-content><h1 id=how-do-containers-work>How Do Containers Work?</h1><h2 id=introduction>Introduction</h2><p>If you&rsquo;ve used Docker or Podman before, you&rsquo;re likely familiar with the concept
 of containers. But what exactly is a container? What is it made of? How does it
 work? And how does it differ from virtual machines? Even if you think you know
-all the answers, you might still learn something new here.</p>
-<h2 id="what-is-a-container">What is a Container?</h2>
-<p>When you run a command like this in your terminal:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker run --rm -it alpine sh
-</span></span></code></pre></div><p>You&rsquo;ll see output similar to the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>Unable to find image <span style="color:#e6db74">&#39;alpine:latest&#39;</span> locally
-</span></span><span style="display:flex;"><span>latest: Pulling from library/alpine
-</span></span><span style="display:flex;"><span>9824c27679d3: Pull complete
-</span></span><span style="display:flex;"><span>Digest: sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
-</span></span><span style="display:flex;"><span>Status: Downloaded newer image <span style="color:#66d9ef">for</span> alpine:latest
-</span></span><span style="display:flex;"><span>/ <span style="color:#75715e">#</span>
+all the answers, you might still learn something new here.</p><h2 id=what-is-a-container>What is a Container?</h2><p>When you run a command like this in your terminal:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>docker run --rm -it alpine sh
+</span></span></code></pre></div><p>You&rsquo;ll see output similar to the following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>Unable to find image <span style=color:#e6db74>&#39;alpine:latest&#39;</span> locally
+</span></span><span style=display:flex><span>latest: Pulling from library/alpine
+</span></span><span style=display:flex><span>9824c27679d3: Pull complete
+</span></span><span style=display:flex><span>Digest: sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
+</span></span><span style=display:flex><span>Status: Downloaded newer image <span style=color:#66d9ef>for</span> alpine:latest
+</span></span><span style=display:flex><span>/ <span style=color:#75715e>#</span>
 </span></span></code></pre></div><p>Eventually, you&rsquo;re given a shell where you can type commands, install packages,
-create users, and do anything else you want.</p>
-<p>But what actually happened behind the scenes? The logs tell you that Docker
+create users, and do anything else you want.</p><p>But what actually happened behind the scenes? The logs tell you that Docker
 didn&rsquo;t find the <code>alpine</code> image locally, pulled it from a registry, and started
 a shell. This is a good high-level summary, but it doesn&rsquo;t explain the
-underlying mechanics.</p>
-<p>To understand how Docker and Podman work their magic, we first need to look at
+underlying mechanics.</p><p>To understand how Docker and Podman work their magic, we first need to look at
 some key features of the <strong>Linux kernel</strong>. These features, called
 <strong>namespaces</strong> and <strong>cgroups</strong>, allow the Linux kernel to run each process in
-isolation from other processes on the system.</p>
-<h2 id="linux-namespaces">Linux Namespaces</h2>
-<p>Let&rsquo;s start by exploring Linux namespaces. A Linux namespace is a kernel
+isolation from other processes on the system.</p><h2 id=linux-namespaces>Linux Namespaces</h2><p>Let&rsquo;s start by exploring Linux namespaces. A Linux namespace is a kernel
 feature that controls what a process <strong>can see</strong>. You can think of namespaces
 as &ldquo;boxes&rdquo; for processes. Each process is contained within a set of these
 boxes, and if a process misbehaves (like trying to delete the entire
 filesystem), it won&rsquo;t affect other processes that aren&rsquo;t sharing the same
-namespaces. You can find a more technical definition by checking the <code>man namespaces</code> page.</p>
-<p>At the time of writing, there are 8 namespaces:</p>
-<ul>
-<li><strong>IPC:</strong> System V IPC, POSIX message queues</li>
-<li><strong>Network:</strong> Network devices, stacks, ports, etc.</li>
-<li><strong>Mount:</strong> Mount points</li>
-<li><strong>PID:</strong> Process IDs</li>
-<li><strong>Time:</strong> Boot and monotonic clocks</li>
-<li><strong>User:</strong> User and group IDs</li>
-<li><strong>UTS:</strong> Hostname and NIS domain name</li>
-</ul>
-<p>I also mentioned <strong>cgroups</strong>. While <strong>namespaces</strong> control what a process <strong>can
+namespaces. You can find a more technical definition by checking the <code>man namespaces</code> page.</p><p>At the time of writing, there are 8 namespaces:</p><ul><li><strong>IPC:</strong> System V IPC, POSIX message queues</li><li><strong>Network:</strong> Network devices, stacks, ports, etc.</li><li><strong>Mount:</strong> Mount points</li><li><strong>PID:</strong> Process IDs</li><li><strong>Time:</strong> Boot and monotonic clocks</li><li><strong>User:</strong> User and group IDs</li><li><strong>UTS:</strong> Hostname and NIS domain name</li></ul><p>I also mentioned <strong>cgroups</strong>. While <strong>namespaces</strong> control what a process <strong>can
 see</strong>, <strong>cgroups</strong> control the resources a process can use (CPU, memory, disk
 I/O, etc.). I won&rsquo;t go into too much detail about cgroups for now, as I believe
 understanding namespaces is the most crucial first step to grasping the core
-concept of a container.</p>
-<h2 id="isolating-a-process">Isolating a Process</h2>
-<p>We can isolate a process using the <code>unshare</code> system call, which runs a program
-in new namespaces. As specified in the man page:</p>
-<blockquote>
-<p>The unshare command creates new namespaces (as specified by the command-line
+concept of a container.</p><h2 id=isolating-a-process>Isolating a Process</h2><p>We can isolate a process using the <code>unshare</code> system call, which runs a program
+in new namespaces. As specified in the man page:</p><blockquote><p>The unshare command creates new namespaces (as specified by the command-line
 options described below) and then executes the specified program. If program
-is not given, then &ldquo;${SHELL}&rdquo; is run (default: /bin/sh).</p></blockquote>
-<p>Let&rsquo;s start with the UTS namespace. Using this namespace, we can change the
-hostname for a process without affecting the host machine it&rsquo;s running on.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo unshare --uts bash
-</span></span><span style="display:flex;"><span>root@laptop:/home/limerc#
-</span></span></code></pre></div><p>Now, let&rsquo;s change the hostname within this new shell.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>root@laptop:/home/limerc# hostname container
-</span></span><span style="display:flex;"><span>root@laptop:/home/limerc# hostname
-</span></span><span style="display:flex;"><span>container
+is not given, then &ldquo;${SHELL}&rdquo; is run (default: /bin/sh).</p></blockquote><p>Let&rsquo;s start with the UTS namespace. Using this namespace, we can change the
+hostname for a process without affecting the host machine it&rsquo;s running on.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ sudo unshare --uts bash
+</span></span><span style=display:flex><span>root@laptop:/home/limerc#
+</span></span></code></pre></div><p>Now, let&rsquo;s change the hostname within this new shell.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>root@laptop:/home/limerc# hostname container
+</span></span><span style=display:flex><span>root@laptop:/home/limerc# hostname
+</span></span><span style=display:flex><span>container
 </span></span></code></pre></div><p>As you can see, the output is now <code>container</code>. We&rsquo;ve successfully changed the
 hostname for this process. Now, let&rsquo;s exit the process by typing <code>exit</code> and
-check the hostname of the host machine again.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>root@laptop:/home/limerc# exit
-</span></span><span style="display:flex;"><span>exit
-</span></span><span style="display:flex;"><span>~
-</span></span><span style="display:flex;"><span>$ hostname
-</span></span><span style="display:flex;"><span>laptop
+check the hostname of the host machine again.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>root@laptop:/home/limerc# exit
+</span></span><span style=display:flex><span>exit
+</span></span><span style=display:flex><span>~
+</span></span><span style=display:flex><span>$ hostname
+</span></span><span style=display:flex><span>laptop
 </span></span></code></pre></div><p>The hostname of the host machine did not change. This simple experiment
 demonstrates how namespaces work: we provided the process with its own hostname
-resource, which is independent of the host and other processes.</p>
-<p>Next, let&rsquo;s introduce the <code>PID</code> namespace. This one is important to understand.
+resource, which is independent of the host and other processes.</p><p>Next, let&rsquo;s introduce the <code>PID</code> namespace. This one is important to understand.
 The <code>PID</code> namespace isolates the process ID number space. This means the same
 process ID <strong>number</strong> can exist in different namespaces. For example, you can&rsquo;t
 have two processes with the same ID on your host machine, but you can have PID
 1 on your host and another PID 1 inside a namespace. The PID within the
 namespace is relative; it&rsquo;s PID 1 from the process&rsquo;s perspective, but it has a
-different, unique ID on the host. A demonstration will make this clearer.</p>
-<p>I&rsquo;ll run the <code>unshare</code> command again with the <code>--pid</code> flag to create a new
-<code>PID</code> namespace. Then, in the new shell, I&rsquo;ll run the <code>ps</code> command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo unshare --pid sh
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ps</span>
-</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
-</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">1</span> ?        00:00:14 systemd
-</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">2</span> ?        00:00:00 kthreadd
-</span></span><span style="display:flex;"><span>      ...
+different, unique ID on the host. A demonstration will make this clearer.</p><p>I&rsquo;ll run the <code>unshare</code> command again with the <code>--pid</code> flag to create a new
+<code>PID</code> namespace. Then, in the new shell, I&rsquo;ll run the <code>ps</code> command.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ sudo unshare --pid sh
+</span></span><span style=display:flex><span><span style=color:#75715e># ps</span>
+</span></span><span style=display:flex><span>    PID TTY          TIME CMD
+</span></span><span style=display:flex><span>      <span style=color:#ae81ff>1</span> ?        00:00:14 systemd
+</span></span><span style=display:flex><span>      <span style=color:#ae81ff>2</span> ?        00:00:00 kthreadd
+</span></span><span style=display:flex><span>      ...
 </span></span></code></pre></div><p>This output shows all the processes from the host machine. But why? When I
 first tinkered with Linux namespaces, I was confused. I thought running <code>ps</code>
 inside a <code>PID</code> namespace would only show processes running within that
-&ldquo;container.&rdquo;</p>
-<p>The reason for this behavior is that the <code>ps</code> command reads process information
+&ldquo;container.&rdquo;</p><p>The reason for this behavior is that the <code>ps</code> command reads process information
 from the virtual filesystem <code>/proc</code>, which starts at the root <code>/</code>. Even though
 our process is isolated by a namespace, the <code>ps</code> command is still reading from
 the host&rsquo;s <code>/proc</code>. To fix this, we need to give the container its own <strong>root</strong>
-filesystem.</p>
-<h2 id="changing-the-root-chroot">Changing the Root (chroot)</h2>
-<p>There&rsquo;s a command called <code>chroot</code>:</p>
-<blockquote>
-<p>chroot - run command or interactive shell with special root directory</p></blockquote>
-<p>This command does exactly what it says: it changes the filesystem perspective
+filesystem.</p><h2 id=changing-the-root-chroot>Changing the Root (chroot)</h2><p>There&rsquo;s a command called <code>chroot</code>:</p><blockquote><p>chroot - run command or interactive shell with special root directory</p></blockquote><p>This command does exactly what it says: it changes the filesystem perspective
 for a process. You can create an arbitrary directory on your host machine and
-use <code>chroot</code> to set it as the root for your process.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ mkdir process-root
-</span></span><span style="display:flex;"><span>$ sudo chroot process-root
-</span></span><span style="display:flex;"><span>chroot: failed to run command ‘/bin/bash’: No such file or directory
+use <code>chroot</code> to set it as the root for your process.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ mkdir process-root
+</span></span><span style=display:flex><span>$ sudo chroot process-root
+</span></span><span style=display:flex><span>chroot: failed to run command ‘/bin/bash’: No such file or directory
 </span></span></code></pre></div><p>The problem is that when we changed the root directory, there was no <code>/bin</code>
 directory, so <code>chroot</code> couldn&rsquo;t find the <code>/bin/bash</code> executable. We could fix
 this by manually creating a <code>./process-root/bin</code> directory and copying <code>bash</code>
-and its dependencies, but that&rsquo;s a tedious process.</p>
-<p>Instead, let&rsquo;s download the Alpine Linux filesystem, which is a very small,
-minimal distribution.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ curl -LO https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-minirootfs-3.22.1-x86_64.tar.gz
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ tar xzf alpine-minirootfs-3.22.1-x86_64.tar.gz -C process-root/
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ ls process-root/
-</span></span><span style="display:flex;"><span>bin  dev  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+and its dependencies, but that&rsquo;s a tedious process.</p><p>Instead, let&rsquo;s download the Alpine Linux filesystem, which is a very small,
+minimal distribution.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ curl -LO https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-minirootfs-3.22.1-x86_64.tar.gz
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>$ tar xzf alpine-minirootfs-3.22.1-x86_64.tar.gz -C process-root/
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>$ ls process-root/
+</span></span><span style=display:flex><span>bin  dev  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 </span></span></code></pre></div><p>As you can see, we downloaded the Alpine root filesystem and extracted it into
-the <code>process-root</code> directory, which will be the new root for our process.</p>
-<p>Now, let&rsquo;s run the <code>chroot</code> command again.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo chroot process-root sh
-</span></span><span style="display:flex;"><span>/ <span style="color:#75715e">#</span>
+the <code>process-root</code> directory, which will be the new root for our process.</p><p>Now, let&rsquo;s run the <code>chroot</code> command again.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ sudo chroot process-root sh
+</span></span><span style=display:flex><span>/ <span style=color:#75715e>#</span>
 </span></span></code></pre></div><p>It worked! With <code>chroot</code>, we can give a process its own filesystem. Combined
 with <strong>namespaces</strong>, we can also give a process its own view of system
-resources, like its own PID, hostname, and network interfaces.</p>
-<p>Now, let&rsquo;s combine these two approaches.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo unshare --pid --fork chroot process-root sh
-</span></span><span style="display:flex;"><span>/ <span style="color:#75715e"># mount -t proc proc proc</span>
-</span></span><span style="display:flex;"><span>/ <span style="color:#75715e"># ps</span>
-</span></span><span style="display:flex;"><span>PID   USER      TIME  COMMAND
-</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> root      0:00  sh
-</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">3</span> root      0:00  ps
-</span></span><span style="display:flex;"><span>/ <span style="color:#75715e">#</span>
+resources, like its own PID, hostname, and network interfaces.</p><p>Now, let&rsquo;s combine these two approaches.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ sudo unshare --pid --fork chroot process-root sh
+</span></span><span style=display:flex><span>/ <span style=color:#75715e># mount -t proc proc proc</span>
+</span></span><span style=display:flex><span>/ <span style=color:#75715e># ps</span>
+</span></span><span style=display:flex><span>PID   USER      TIME  COMMAND
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>1</span> root      0:00  sh
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>3</span> root      0:00  ps
+</span></span><span style=display:flex><span>/ <span style=color:#75715e>#</span>
 </span></span></code></pre></div><p>First, we run <code>unshare</code> with the <code>PID</code> namespace flag. You might also notice a
 new flag: <code>--fork</code>. This flag is used to create the shell process as a child of
 the <code>unshare</code> command. For the sake of this article, I won&rsquo;t go into the
-details on that, but you can read about it in <code>man unshare</code>.</p>
-<p>By combining <code>unshare</code> and <code>chroot</code>, and then mounting a new virtual <code>/proc</code>
+details on that, but you can read about it in <code>man unshare</code>.</p><p>By combining <code>unshare</code> and <code>chroot</code>, and then mounting a new virtual <code>/proc</code>
 filesystem, we&rsquo;ve successfully created a truly isolated environment. The <code>ps</code>
 command can now read from this new <code>/proc</code> filesystem, which is populated by
-the kernel with only the processes running inside our isolated &ldquo;container.&rdquo;</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>I hope this article was useful. Now you understand the basic mechanics behind
+the kernel with only the processes running inside our isolated &ldquo;container.&rdquo;</p><h2 id=conclusion>Conclusion</h2><p>I hope this article was useful. Now you understand the basic mechanics behind
 containerization technologies like Docker. You can see that containers are
 essentially isolated processes that all share the same Linux kernel, which is
 the key difference from how virtual machines work. There&rsquo;s much more to cover,
 such as the Mount, IPC, and Network namespaces. I hope to cover those topics in
-a future article. Thanks for reading!</p>
-
-            </div>
-        </article></main>
-</div>
-<footer class="footer">
-    <span class="footer_item"> </span>
-    &nbsp;
-
-    <div class="footer_social-icons">
-<a href="https://github.com/11me" target="_blank" rel="noopener noreferrer me"
-    title="Github">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-</a>
-<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
-    title="RSS">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 11a9 9 0 0 1 9 9" />
-    <path d="M4 4a16 16 0 0 1 16 16" />
-    <circle cx="5" cy="19" r="1" />
-</svg>
-</a>
-</div>
-    <small class="footer_copyright">
-        © 2025 Emil.
-        
-    </small>
-</footer>
-
-
-
-
-
-
-
-    
-    <script async src="http://localhost:1313/js/main.js" ></script>
-
-    
-
-</body>
-</html>
+a future article. Thanks for reading!</p></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=https://github.com/11me target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
+</a><a href=/index.xml target=_blank rel="noopener noreferrer me" title=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></div><small class=footer_copyright>© 2025 Emil.</small></footer><script src=https://11me.github.io/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script></body></html>
