@@ -1,15 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Personal Website On the Internet</title><link>https://11me.github.io/posts/</link><description>Recent content in Posts on Personal Website On the Internet</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 02 Aug 2025 00:18:30 +0300</lastBuildDate><atom:link href="https://11me.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>How Do Containers Work</title><link>https://11me.github.io/posts/how-containers-work/</link><pubDate>Sat, 02 Aug 2025 00:18:30 +0300</pubDate><guid>https://11me.github.io/posts/how-containers-work/</guid><description>&lt;h1 id="how-do-containers-work">How Do Containers Work?&lt;/h1>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>If you&amp;rsquo;ve used Docker or Podman before, you&amp;rsquo;re likely familiar with the concept
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Personal Website On the Internet</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Personal Website On the Internet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Aug 2025 11:32:00 +0300</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Top 10 Golang Interview Questions</title>
+      <link>http://localhost:1313/posts/top-10-golang-interview-questions/</link>
+      <pubDate>Thu, 28 Aug 2025 11:32:00 +0300</pubDate>
+      
+      <guid>http://localhost:1313/posts/top-10-golang-interview-questions/</guid>
+      
+      <description>&lt;p&gt;If you’re preparing for a Go interview, I’ve put together my top 10 list of the
+most commonly asked questions. I collected these questions myself while going
+through many Golang interviews. This guide walks you through ten questions
+you’ll almost certainly encounter, starting from the fundamentals and moving up
+to concurrency.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;For each answer, I also provide references that I highly recommend reading to gain a deeper understanding.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-what-is-a-slice-and-how-is-it-different-from-an-array&#34;&gt;1. What is a slice and how is it different from an array?&lt;/h2&gt;
+&lt;p&gt;Slices are Go&amp;rsquo;s &amp;ldquo;dynamic array&amp;rdquo; and show up everywhere.&lt;br&gt;
+A slice is a &lt;strong&gt;descriptor&lt;/strong&gt; —&lt;code&gt;pointer, len, cap&lt;/code&gt; — over an underlying array&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. Slicing &lt;strong&gt;shares&lt;/strong&gt; that array; &lt;code&gt;append&lt;/code&gt; may &lt;strong&gt;reallocate&lt;/strong&gt; to a new one.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>How Do Containers Work</title>
+      <link>http://localhost:1313/posts/how-containers-work/</link>
+      <pubDate>Sat, 02 Aug 2025 00:18:30 +0300</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-containers-work/</guid>
+      
+      <description>&lt;h1 id=&#34;how-do-containers-work&#34;&gt;How Do Containers Work?&lt;/h1&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;If you&amp;rsquo;ve used Docker or Podman before, you&amp;rsquo;re likely familiar with the concept
 of containers. But what exactly is a container? What is it made of? How does it
 work? And how does it differ from virtual machines? Even if you think you know
-all the answers, you might still learn something new here.&lt;/p>
-&lt;h2 id="what-is-a-container">What is a Container?&lt;/h2>
-&lt;p>When you run a command like this in your terminal:&lt;/p></description></item><item><title>Starting My Blog</title><link>https://11me.github.io/posts/starting-my-blog/</link><pubDate>Mon, 21 Jul 2025 23:41:05 +0300</pubDate><guid>https://11me.github.io/posts/starting-my-blog/</guid><description>&lt;p>I&amp;rsquo;ve always had the desire to start writing, and this feeling has stayed with
-me for years. Nowadays, people share &lt;del>garbage&lt;/del> everything on social media, but I&amp;rsquo;m not
+all the answers, you might still learn something new here.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-a-container&#34;&gt;What is a Container?&lt;/h2&gt;
+&lt;p&gt;When you run a command like this in your terminal:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Starting My Blog</title>
+      <link>http://localhost:1313/posts/starting-my-blog/</link>
+      <pubDate>Mon, 21 Jul 2025 23:41:05 +0300</pubDate>
+      
+      <guid>http://localhost:1313/posts/starting-my-blog/</guid>
+      
+      <description>&lt;p&gt;I&amp;rsquo;ve always had the desire to start writing, and this feeling has stayed with
+me for years. Nowadays, people share &lt;del&gt;garbage&lt;/del&gt; everything on social media, but I&amp;rsquo;m not
 fan of social platforms neither sharing on them nor consuming their content. I
-decided the time has finally come to create &lt;strong>MY OWN&lt;/strong> corner on the internet.&lt;/p>
-&lt;p>Now I have my own personal website on the internet, and I can share it with
+decided the time has finally come to create &lt;strong&gt;MY OWN&lt;/strong&gt; corner on the internet.&lt;/p&gt;
+&lt;p&gt;Now I have my own personal website on the internet, and I can share it with
 anyone. It&amp;rsquo;s completely free, just static content hosted on GitHub. I admire
 people who maintain personal websites; there&amp;rsquo;s something genuinely cool about
-having your own corner of the internet.&lt;/p></description></item></channel></rss>
+having your own corner of the internet.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
